@@ -1,3 +1,6 @@
+# Get computer system name
+$name = get-wmiobject -class win32_computersystem
+
 # Get operating system information
 $os = get-wmiobject -class win32_operatingsystem
 
@@ -34,6 +37,9 @@ $gpu = get-wmiobject -class win32_videocontroller
 $bios = get-wmiobject -class win32_bios
 
 # Output results
+"Computer's name:
+$($name.name)"
+"`n"
 "Operating System:
 $($os.caption) $($os.osarchitecture)"
 "`n"
